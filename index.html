@@ -9,7 +9,7 @@
 <body>
 <!-- Start Header-->
     <header class="page-header">
-        <div></div>
+
         <div class="navigation center">
             <a href=""><img width="191" src="images/logo.png" alt=""></a>
             <nav class="main-navigation">
@@ -27,12 +27,18 @@
                 <li><a class="ico cart" href=""></a></li>
             </nav>
         </div>
-        <div class="slider">
+        <div class="slider" id="slides">
             <section class="slider-info">
-                <p>Welcome To <span>Pahu Design</span></p>
+                <p>Welcome To <span class="selected-text">Pahu Design</span></p>
                 <h2>YOU ARE IN GOOD
                     HAND WITH US</h2>
             </section>
+            <div class="slide showing"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <span class="next" id="next"></span>
+            <span class="previous" id="previous"></span>
         </div>
         <div class="features center">
             <h2>Why choose us</h2>
@@ -383,5 +389,6 @@
     </section>
 </footer>
 <!--End Footer-->
+<script src="js/main.js"></script>
 </body>
 </html>

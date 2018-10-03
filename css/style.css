@@ -264,28 +264,99 @@ nav.user-block li .ico.cart {
 }
 
 .slider {
+    width: 100%;
     height: 880px;
-    background: url("../images/slider/slide-1.jpg") 50% 50%;
-    background-repeat: no-repeat;
-    -webkit-background-size: 100%;
-    background-size: 100%;
     position: relative;
+
 }
 
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 0;
 
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide:nth-child(1) {
+    background: url("../images/slider/slide-1.jpg") 50% 50%;
+    background-size: 100%;
+}
+
+.slide:nth-child(2) {
+    background: url("../images/slider/slide-2.jpg") 50% 50%;
+    background-size: 100%;
+}
+
+.slide:nth-child(3) {
+    background: url("../images/slider/slide-3.jpg") 50% 50%;
+    background-size: 100%;
+}
+
+.slide:nth-child(4) {
+    background: url("../images/slider/slide-4.jpg") 50% 50%;
+    background-size: 100%;
+}
+
+.slider .next,
+.slider .previous{
+    position: absolute;
+    top:50%;
+    display: block;
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #525251;
+    border-radius: 50%;
+    transition: 250ms;
+    background-image: url("../images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: 45% 50%;
+}
+
+.slider .next {
+    right: 2%;
+    transform: rotate(180deg);
+}
+
+.slider .previous {
+    left: 2%;
+}
+
+.slider>span:hover {
+    background-color: rgba(82,82,81,.3);
+}
+
+.slider>span:active {
+    background-color: rgba(82,82,81,.8);
+}
 
 .slider-info {
     color: #ffffff;
     width: 555px;
     padding: 195px;
+    z-index: 3;
 }
 
 .slider-info p {
     font-size: 25px;
-    font-family: "Poppins";
     padding-left: 85px;
     line-height: 0.76;
     position: relative;
+    z-index: 4;
+    font-style: italic;
 }
 
 .slider-info p::before {
@@ -298,7 +369,7 @@ nav.user-block li .ico.cart {
     left:0;
 }
 
-.slider-info span {
+.slider-info .selected-text {
     color: #fece76;
     font-weight: bold;
 }
@@ -306,6 +377,9 @@ nav.user-block li .ico.cart {
 .slider-info h2 {
     margin-top: 65px;
     font-size: 60px;
+    z-index: 5;
+    position: relative;
+
 }
 
 .features {
